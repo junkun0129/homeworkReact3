@@ -22,8 +22,10 @@ export default class ChallengeTwo extends Component {
   componentDidMount() { 
     //display the student list after 3 seconds
     setTimeout(()=>{
-      this.randomize();
+      this.setState({arr:studentList})
     }, 3000);
+
+    
   }
 
   //random button handler
@@ -40,16 +42,7 @@ export default class ChallengeTwo extends Component {
     //console.log(this.state.arr)
   }
 
-  display=()=>{
-    
-    
-    return this.state.arr.map(name=>{
-        <div>
-          {name+"iii"}
-        </div>
-      })
-    
-  }
+  
 
   render() {
     
@@ -73,7 +66,7 @@ export default class ChallengeTwo extends Component {
             }
           </ul>
         </div>
-        <button className='btn large' onClick={()=>console.log(this.state.arr)}>Randomize</button>
+        <button className='btn large' onClick={()=>this.randomize()}>Randomize</button>
       </>
     )
   }
